@@ -46,6 +46,33 @@ These are **actual images saved in the executed notebooks**, not regenerated dem
 
 ![FNO-CNN zero-shot predictions at 256×256](figures/fno_cnn_256_zssr.png)
 
+
+## Additional figures from research reports
+
+The charts below are **replotted from the author's research reports**, rather than new model evaluations. They describe additional experiments beyond the three notebooks in this repository.
+
+### Effect of U-Net width and upsampling
+
+![U-FNO configuration accuracy chart](figures/report_unet_configurations.svg)
+
+Source: research notes `report2.pdf`, pp. 1–2. The figure distinguishes native-grid, direct 256×256, and input-resizing results. Differences in the original experiments should not be confused with the currently committed three baseline notebooks.
+
+### Effect of increasing FNO-CNN depth
+
+![FNO CNN 4 vs 5 layer error comparison](figures/report_cnn_depth.svg)
+
+Source: `report 3.pdf`, p. 1. The difference between 4 and 5 layers is only 0.0001 percentage points in the reported run, despite an increase from 4,281,954 to 5,359,330 parameters.
+
+### Per-sample error plots (saved notebook outputs)
+
+These figures were exported from the exact executed notebooks already committed to this repository. They are *not* a new controlled comparison across architectures.
+
+| Native-grid sample error | Native vs. zero-shot error |
+| --- | --- |
+| ![FNO errors](figures/fno_32_test_error_plot.png) | ![FNO native versus ZSSR](figures/fno_native_vs_zssr_errors.png) |
+| ![U-FNO errors](figures/ufno_64_test_error_plot.png) | ![U-FNO native versus ZSSR](figures/ufno_native_vs_zssr_errors.png) |
+| ![FNO-CNN errors](figures/fno_cnn_64_test_error_plot.png) | ![FNO-CNN native versus ZSSR](figures/fno_cnn_native_vs_zssr_errors.png) |
+
 ## Reproducing the experiments
 
 1. Install Python with JAX, Equinox, Optax, NumPy and Matplotlib.
